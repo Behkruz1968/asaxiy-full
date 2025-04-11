@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #006bff;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+}
+
+.container2 {
+    max-width: 98%;
+    margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+    .container2 {
+        max-width: 1350px;
+    }
+}
+
+.btn {
+    padding: 6px 17px;
+    border-radius: 10px;
+    color: #fff;
+    @apply bg-primary;
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    @apply bg-hover;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.2s;
+}
+
+.btn:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+header {
+    box-shadow: 0 10px 30px 0 #d1d5df80;
+    background: #fff;
+    border-bottom: 1px solid #d1d5dfa8;
+}
+
+.swiper-next,
+.swiper-prev {
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #006bff;
+    font-size: 30px;
+    color: #006bff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.swiper-next:hover,
+.swiper-prev:hover {
+    background: #006bff;
+    color: #fff;
+}
+
+#nav + ul {
+    transition: 0.3s;
+}
+
+#nav:checked + ul {
+    left: 0;
+}
+
+/* card ----------------- */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+    background: #fff;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(209, 213, 223, 0.5);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-img {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-title {
+    @apply text-tx;
+}
+
+.card-rate {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card-stars {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+}
+
+.comment {
+    @apply text-comment;
+}
+
+.card-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-price p {
+    text-decoration: line-through;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.card-price h1 {
+    @apply text-primary;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.month {
+    width: 100%;
+    border: 1px solid #fe7300;
+    border-radius: 4px;
+    padding: 5px;
+    color: #fe7300;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+}
+
+.card-action button:first-child {
+    flex: 3;
+}
+
+.card-action button:last-child {
+    flex: 1;
+    background: #00bfaf;
+    height: 100%;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.card-action button:last-child:active {
+    transform: scale(0.97);
+}
+
+.yellow-star {
+    color: #fe7300;
+}
+
+.gray-star {
+    @apply text-gray-300;
+}
+
+.cartProducts {
+    padding: 25px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.shop-img {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+
+.shop-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.shop-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.shop-price {
+    @apply text-primary;
+    font-weight: 700;
+    text-wrap: nowrap;
+}
+
+.shop-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #fe720033;
+    padding-top: 15px;
+}
+
+.shop-bottom p {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.delete-btn i {
+    border: 1px solid #ec3939;
+    color: #ec3939;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.delete-btn i:hover {
+    color: #fff;
+    background: #ec3939;
+}
+
+.delete-btn i:active {
+    transform: scale(0.96);
+}
+
+.shop-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.bx-heart,
+.bxs-heart {
+    color: rgb(221, 44, 44);
+}
+
+/* loader */
+.loader {
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    @apply bg-primary;
+    opacity: 0.8;
+    box-shadow: 0 0 0 0 #006aff60;
+    animation: l2 1.5s infinite linear;
+    position: relative;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 100%;
+    box-shadow: 0 0 0 0 #006aff34;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+.loader:after {
+    animation-delay: -1s;
+}
+
+@keyframes l2 {
+    100% {
+        box-shadow: 0 0 0 40px #0000;
+    }
+}
+
+#form input,
+#reg-form input {
+    border: 1px solid #006aff57;
+    outline: none;
+}
+
+.logout-popup {
+    z-index: 1000000 !important;
+    display: none;
+}
+
+.logout-popup.show {
+    position: fixed;
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.newPr {
+    position: absolute;
+    left: -40%;
+    top: 4%;
+    @apply bg-green-400;
+    padding: 2px;
+    width: 100%; 
+    text-align: center;
+    transform: rotate(-45deg);
+    color: #fff;
+    font-size: 12px;
+    z-index: 100;
+}
+
+@media (max-width: 580px) {
+    .card-action button:first-child,
+    .card-price p {
+        display: none;
+    }
+
+    .card-img {
+        height: 120px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 560px) {
+    .shop-img {
+        align-self: center;
+        height: 140px;
+        width: 140px;
+    }
+
+    .shop-card {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .shop-price {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 466px) {
+    .card-rate {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card-price h1 {
+        font-size: 15px;
+    }
+
+    .month {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 290px) {
+    .shop-bottom {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .delete-btn {
+        width: 100%;
+    }
+
+    .delete-btn i {
+        width: 100%;
+    }
+}

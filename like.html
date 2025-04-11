@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAXIY &middot; Sevimlilar</title>
+    <link rel="shortcut icon" href="./assets/img/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/output.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="bg-[#f4f7fd]">
+
+    <header>
+        <div class="container2">
+            <nav class="flex justify-between items-center py-[15px] gap-[40px]">
+                <label for="nav" class="hidden max-[600px]:block">
+                    <i class='bx bx-menu text-[30px] text-primary'></i>
+                </label>
+
+                <a href="./index.html">
+                    <img src="./assets/img/logo.png" alt="" class="max-[600px]:w-[100px]">
+                </a>
+
+                <button class="btn max-[600px]:hidden"><i class='bx bx-menu text-[18px]'></i>Bo'limlar</button>
+
+                <form action=""
+                    class="w-[30%] border-[2px] border-primary flex justify-between items-center h-[37px] max-[820px]:hidden rounded-[10px] overflow-hidden">
+                    <input type="text" placeholder="Qidirish..." class="h-full p-[10px] w-full">
+                    <button type="submit" class="bg-primary text-[#fff] h-full px-[10px]">Qidirish</button>
+                </form>
+                <input type="checkbox" name="" id="nav" class="hidden">
+                <ul
+                    class="flex relative justify-between items-center w-[40%] max-[600px]:z-[9999] max-[400px]:w-full max-[600px]:h-[100vh] max-[600px]:w-[70%] max-[600px]:bg-[#fff] max-[600px]:fixed max-[600px]:left-[-100%] max-[600px]:top-0 max-[600px]:flex-col max-[600px]:p-[20px] max-[600px]:items-start max-[600px]:justify-start max-[600px]:gap-[30px]">
+
+                    <label for="nav"
+                        class="absolute right-[10px] top-[10px] text-[25px] text-primary hidden max-[600px]:block">
+                        <i class='bx bx-x'></i>
+                    </label>
+
+                    <li><a href="#!" class="flex justify-start items-center gap-[10px]"><img src="./assets/svg/1.svg"
+                                alt=""><span class="hidden max-[600px]:block">Taqqoslash</span></a></li>
+                    <li><a href="#!" class="flex justify-start items-center gap-[10px]"><img src="./assets/svg/2.svg"
+                                alt=""><span class="hidden max-[600px]:block">To'lov</span></a></li>
+                    <li><a href="#!" class="flex justify-start items-center gap-[10px]"><img src="./assets/svg/3.svg"
+                                alt=""><span class="hidden max-[600px]:block">Yetkazmalar</span></a></li>
+                    <li><a href="./cart.html" class="relative flex justify-start items-center gap-[10px]"><img
+                                src="./assets/svg/4.svg" alt=""><span class="hidden max-[600px]:block">Savat</span><span
+                                class="counter h-[16px] top-[-2px] right-[-8px] max-[600px]:left-[-5px] w-[16px] text-[10px] bg-primary rounded-full flex justify-center items-center absolute text-[#fff]">0</span></a>
+                    </li>
+                    <li><a href="./like.html" class="relative flex justify-start items-center gap-[10px]"><img
+                                src="./assets/svg/5.svg" alt=""><span
+                                class="hidden max-[600px]:block">Sevimlilar</span><span
+                                class="like-counter h-[16px] top-[-2px] right-[-8px] max-[600px]:left-[-5px] w-[16px] text-[10px] bg-primary rounded-full flex justify-center items-center absolute text-[#fff]">0</span></a>
+                    </li>
+                    <li class="no-user"><a href="./login.html" class="flex justify-start items-center gap-[10px]"><img
+                                src="./assets/svg/user.svg" alt=""><span
+                                class="hidden max-[600px]:block">Profil</span></a>
+                    </li>
+                    <li class="userInfo flex gap-[5px] justify-center items-center border p-[5px]">
+                        <span class="has-user"></span>
+                        <i class="bx bx-user text-primary text-[20px]"></i>
+                    </li>
+                    <li class="logout"><i class='bx bx-exit text-red-500 cursor-pointer text-[30px]'></i></li>
+
+                    <div
+                        class="justify-start items-center gap-[20px] absolute bottom-[20px] w-full hidden max-[600px]:flex">
+                        <i
+                            class='text-primary text-[20px] border border-primary p-[5px] rounded-full bx bxl-instagram'></i>
+                        <i
+                            class='text-primary text-[20px] border border-primary p-[5px] rounded-full bx bxl-telegram'></i>
+                        <i
+                            class='text-primary text-[20px] border border-primary p-[5px] rounded-full bx bxl-facebook'></i>
+                    </div>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="logout-popup"
+        class="logout-popup fixed left-0 top-0  flex justify-center items-center h-[100vh] bg-[#000000a2] backdrop-blur-[5px] w-full">
+        <div class="popup-content">
+            <p>Hisobdan chiqmoqchimisiz</p>
+            <div class="flex justify-center items-center gap-[20px] mt-4">
+                <button
+                    class="text-white p-[5px] w-full rounded-md cursor-pointer opacity-80 hover:opacity-100 bg-green-500"
+                    id="no-btn">Yo'q</button>
+                <button
+                    class="text-white p-[5px] w-full rounded-md cursor-pointer opacity-80 hover:opacity-100 bg-red-500"
+                    id="yes-btn">Ha</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="like-section" class="py-[40px]">
+        <div class="container2">
+            <div
+                class="products grid grid-cols-4 gap-[20px] max-[1158px]:grid-cols-3 max-[866px]:grid-cols-2 max-[466px]:gap-[10px]">
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="like-empty" class="py-[40px]">
+        <div class="container2 flex flex-col justify-center items-center">
+            <img src="./assets/svg/heart-bubble.svg" alt="">
+            <h1 class="text-[22px] text-tx font-[700] mt-3">Sevimli mahsulotlar yo'q</h1>
+            <p class="text-tx font-[500]">Mahsulotdagi <i class="bx bxs-heart"></i> belgisi bilan qo'shing️</p>
+        </div>
+    </section>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script type="module" src="./js/like.js"></script>
+</body>
+
+</html>
